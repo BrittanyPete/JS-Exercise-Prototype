@@ -105,14 +105,14 @@ function Car(model, milesPerGallon) {
 
 Car.prototype.fill = function(gallons){
   this.tank = this.tank + gallons;
+  return `The tank for the ${this.model} has ${this.tank} gallons of fuel`;
 }
 
 const honda = new Car('honda', 30);
 
 console.log('Task 2:', honda);
 
-
-console.log(honda.fill(20));
+console.log(honda.fill(25));
 
 
 /*
@@ -142,10 +142,10 @@ console.log(cohen.play());
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Window binding - this binds the 'this' keyword to the window, and returns everything in the window because it doesn't understand what we are trying to bind 'this' to, so it is trying to guess.
+  2. Implicit binding - this is the most popular way to bind the 'this' keyword to an object. It applies to object methods, it tells the 'this' keyword to look to the left of the dot to see what object it should be referring to.
+  3. Explicit binding - we pass in arguments explicitly for what we want 'this' to refer to by using .call, .apply, and .bind.
+  4. New binding - this is used by using constructor functions(which create new objects). The 'this' keyword points to the new object that was created.
 */
 
 
